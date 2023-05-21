@@ -11,10 +11,19 @@ namespace _1_parcial
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                DropRubro.AppendDataBoundItems = true;
+                DropRubro.Items.Insert(0, new ListItem(String.Empty, String.Empty));
+                DropRubro.SelectedIndex = 0;
+                DropTipo.AppendDataBoundItems = true;
+                DropTipo.Items.Insert(0, new ListItem(String.Empty, String.Empty));
+                DropTipo.SelectedIndex = 0;
+            }
         }
         protected void darDeAlta(object sender, EventArgs e)
         {
+          
             SqlDataAlta.InsertParameters["servicio"].DefaultValue = Desc_Serv.Text;
             SqlDataAlta.InsertParameters["rubro"].DefaultValue = DropRubro.SelectedValue;
             SqlDataAlta.InsertParameters["tipo"].DefaultValue = DropTipo.SelectedValue;
@@ -24,7 +33,9 @@ namespace _1_parcial
                 salida.Text = $"Se dio alta {Desc_Serv.Text}!";
                      }
             else { salida.Text = $"Error {resultado}";  }
-
+            Desc_Serv.Text =  "";
+            DropRubro.SelectedIndex = 0;
+            DropTipo.SelectedIndex = 0;
 
 
         }
