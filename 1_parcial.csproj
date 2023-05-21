@@ -181,6 +181,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="ver_rubros.aspx" />
     <Content Include="ver_tipos.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -235,6 +236,13 @@
     </Compile>
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ver_rubros.aspx.cs">
+      <DependentUpon>ver_rubros.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ver_rubros.aspx.designer.cs">
+      <DependentUpon>ver_rubros.aspx</DependentUpon>
     </Compile>
     <Compile Include="ver_tipos.aspx.cs">
       <DependentUpon>ver_tipos.aspx</DependentUpon>

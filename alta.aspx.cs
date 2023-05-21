@@ -13,5 +13,21 @@ namespace _1_parcial
         {
 
         }
+        protected void darDeAlta(object sender, EventArgs e)
+        {
+            SqlDataAlta.InsertParameters["servicio"].DefaultValue = Desc_Serv.Text;
+            SqlDataAlta.InsertParameters["rubro"].DefaultValue = DropRubro.SelectedValue;
+            SqlDataAlta.InsertParameters["tipo"].DefaultValue = DropTipo.SelectedValue;
+            int resultado = SqlDataAlta.Insert();
+            if(resultado > 0)
+            {
+                salida.Text = $"Se dio alta {Desc_Serv.Text}!";
+                     }
+            else { salida.Text = $"Error {resultado}";  }
+
+
+
+        }
+
     }
 }
