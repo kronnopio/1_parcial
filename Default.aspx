@@ -10,7 +10,7 @@
         <asp:Button ID="Button_baja" runat="server" Text="Baja" PostBackUrl="baja.aspx"  />&nbsp;&nbsp;
         <asp:Button ID="Button_modificaion" runat="server" Text="Modificacion" />
         <br /> <br /> 
-        <asp:Button ID="Button_serv" runat="server" Text="Ver Servicios" />&nbsp;&nbsp;
+        <asp:Button ID="Button_serv" runat="server" PostBackUrl="ver_servicios.aspx" Text="Ver Servicios" />&nbsp;&nbsp;
         <asp:Button ID="Button_tipo" runat="server" PostBackUrl="ver_tipos.aspx" Text="Ver Tipos" />&nbsp;&nbsp;
         <asp:Button ID="Button_rub" runat="server" PostBackUrl="ver_rubros.aspx" Text="Ver Rubros" />&nbsp;&nbsp;
         </div>
