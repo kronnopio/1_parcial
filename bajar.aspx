@@ -28,8 +28,43 @@
          <div style="margin:20px 80px 100px 70px;">
             <asp:Label ID="Label1" runat="server" Text="Ingrese Cod Servicio: "></asp:Label>
             <asp:TextBox ID="codigo" runat="server"></asp:TextBox>
-            <asp:Button ID="consultar" runat="server" Text="Consultar" />
+
+             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" 
+                 runat="server"
+                 ControlToValidate="codigo"
+                 ErrorMessage="Requerido"
+                 ForeColor="#CC0000" >
+             </asp:RequiredFieldValidator>
+             <br /><br />
+            <asp:Button ID="consult" runat="server" Text="Consultar" OnClick="consultar" />
+             <br /><br />
+             <asp:Label ID="mensaje" runat="server"></asp:Label>
+              <br /><br />
+             <asp:Label ID="Label2" runat="server" Text="Descricion Servicio: "></asp:Label>
+             <asp:Label ID="DescServ" runat="server" Text="Label"></asp:Label> &nbsp;&nbsp;
+
+             <asp:Label ID="Label3" runat="server" Text="Descricion Rubro: "></asp:Label>
+             <asp:Label ID="Rubro" runat="server" Text="Label"></asp:Label> &nbsp;&nbsp;
+
+             <asp:Label ID="Label4" runat="server" Text="Descricion Tipo: "></asp:Label>
+             <asp:Label ID="Tipo" runat="server" Text="Label"></asp:Label> &nbsp;&nbsp;
+             <br />         <br />
+             <asp:Button ID="Button1" runat="server" Text="Bajar" OnClick="borrar" />
         </div>
+         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:parcialConnectionString %>" SelectCommand="SELECT SERVICIOS.cod_servicio, 
+SERVICIOS.desc_servicio, 
+SERVICIOS.rubro,
+SERVICIOS.tipo_servicio,
+RUBROS.desc_rubro, 
+TIPOS_SERVICIO.desc_tipo_serv 
+FROM SERVICIOS LEFT OUTER JOIN RUBROS ON SERVICIOS.rubro = RUBROS.cod_rubro LEFT OUTER JOIN TIPOS_SERVICIO ON SERVICIOS.tipo_servicio = TIPOS_SERVICIO.cod_tipo_serv WHERE (SERVICIOS.cod_servicio = @codigo)" DeleteCommand="DELETE FROM SERVICIOS WHERE (cod_servicio = @codigo)">
+             <DeleteParameters>
+                 <asp:Parameter Name="codigo" />
+             </DeleteParameters>
+             <SelectParameters>
+                 <asp:Parameter Name="codigo" />
+             </SelectParameters>
+         </asp:SqlDataSource>
     </form>
 
     <div class="container body-content">

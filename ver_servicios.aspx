@@ -37,7 +37,13 @@
         </asp:GridView>
        
            <div>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:parcialConnectionString %>" SelectCommand="SELECT SERVICIOS.desc_servicio, RUBROS.desc_rubro, TIPOS_SERVICIO.desc_tipo_serv FROM SERVICIOS LEFT OUTER JOIN RUBROS ON SERVICIOS.rubro = RUBROS.cod_rubro LEFT OUTER JOIN TIPOS_SERVICIO ON SERVICIOS.tipo_servicio = TIPOS_SERVICIO.cod_tipo_serv"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:parcialConnectionString %>" SelectCommand="SELECT 
+SERVICIOS.cod_servicio ,
+SERVICIOS.desc_servicio, 
+RUBROS.desc_rubro, 
+TIPOS_SERVICIO.desc_tipo_serv
+
+FROM SERVICIOS LEFT OUTER JOIN RUBROS ON SERVICIOS.rubro = RUBROS.cod_rubro LEFT OUTER JOIN TIPOS_SERVICIO ON SERVICIOS.tipo_servicio = TIPOS_SERVICIO.cod_tipo_serv"></asp:SqlDataSource>
         </div>
       
     </form>
