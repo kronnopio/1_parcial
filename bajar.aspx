@@ -25,7 +25,10 @@
        </div>
     </nav>
     <form id="form1" runat="server">
-        <div>
+         <div style="margin:20px 80px 100px 70px;">
+            <asp:Label ID="Label1" runat="server" Text="Ingrese Cod Servicio: "></asp:Label>
+            <asp:TextBox ID="codigo" runat="server"></asp:TextBox>
+            <asp:Button ID="consultar" runat="server" Text="Consultar" />
         </div>
     </form>
 
