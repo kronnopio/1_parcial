@@ -36,7 +36,6 @@
             <asp:TextBox ID="DescServ" runat="server"></asp:TextBox> &nbsp;&nbsp;
 
             <asp:Label ID="Label3" runat="server" Text="Tipo: "></asp:Label>
-            <asp:Label ID="DesTipo" runat="server"></asp:Label>
             
             <asp:DropDownList ID="DropTipo" runat="server" 
                 DataSourceID="DataTipo" 
@@ -46,15 +45,32 @@
             &nbsp;
 
             <asp:Label ID="Label4" runat="server" Text="Rubro: "></asp:Label>
-            <asp:Label ID="DesRubro" runat="server"></asp:Label>
             
-            <asp:DropDownList ID="DropRubro" runat="server" DataSourceID="DataSourceRubro" DataTextField="desc_rubro" DataValueField="cod_rubro">
+            <asp:DropDownList ID="DropRubro" runat="server" 
+                DataSourceID="DataSourceRubro" 
+                DataTextField="desc_rubro" 
+                DataValueField="cod_rubro">
             </asp:DropDownList>
-&nbsp;</div>
-            <asp:SqlDataSource ID="ConsultaDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:parcialConnectionString %>" SelectCommand="SELECT SERVICIOS.cod_servicio, SERVICIOS.desc_servicio, RUBROS.desc_rubro, TIPOS_SERVICIO.desc_tipo_serv FROM SERVICIOS LEFT OUTER JOIN RUBROS ON SERVICIOS.rubro = RUBROS.cod_rubro LEFT OUTER JOIN TIPOS_SERVICIO ON SERVICIOS.tipo_servicio = TIPOS_SERVICIO.cod_tipo_serv WHERE (SERVICIOS.cod_servicio = @codigo)">
+            <br /><br>
+            <asp:Button ID="Modificar" runat="server" Text="Modificar" OnClick="modificar" />
+&nbsp;</div><br /><br>
+
+            <asp:SqlDataSource ID="ConsultaDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:parcialConnectionString %>" SelectCommand="SELECT SERVICIOS.cod_servicio, 
+SERVICIOS.desc_servicio, 
+SERVICIOS.rubro,
+SERVICIOS.tipo_servicio,
+RUBROS.desc_rubro, 
+TIPOS_SERVICIO.desc_tipo_serv 
+FROM SERVICIOS LEFT OUTER JOIN RUBROS ON SERVICIOS.rubro = RUBROS.cod_rubro LEFT OUTER JOIN TIPOS_SERVICIO ON SERVICIOS.tipo_servicio = TIPOS_SERVICIO.cod_tipo_serv WHERE (SERVICIOS.cod_servicio = @codigo)" UpdateCommand="UPDATE SERVICIOS SET desc_servicio = @des_servicio, tipo_servicio = @cod_tipo, rubro = @cod_rubro WHERE (cod_servicio = @cod_servicio)">
                 <SelectParameters>
                     <asp:Parameter Name="codigo" />
                 </SelectParameters>
+                <UpdateParameters>
+                    <asp:Parameter Name="des_servicio" />
+                    <asp:Parameter Name="cod_tipo" />
+                    <asp:Parameter Name="cod_rubro" />
+                    <asp:Parameter Name="cod_servicio" />
+                </UpdateParameters>
             </asp:SqlDataSource>
 
 

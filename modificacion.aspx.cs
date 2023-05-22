@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -33,17 +34,39 @@ namespace _1_parcial
             {
                 if (sqlDataReader.Read())
                 {
+                   
                     mensaje.Text = $"Esta [{sqlDataReader["cod_servicio"]}] " ;
                     DescServ.Text = $"{sqlDataReader["desc_servicio"]}";
-                    DesTipo.Text = $"{sqlDataReader["desc_tipo_serv"]}";
-                    DesRubro.Text = $"{sqlDataReader["desc_rubro"]}";
-                   
+                    
+                    DropRubro.SelectedIndex = Convert.ToInt32(sqlDataReader["rubro"]);
+                    DropTipo.SelectedIndex = Convert.ToInt32(sqlDataReader["tipo_servicio"]);
+
                 }
                 else
                 {
                     mensaje.Text = $"No Esta";
                 }
             }
+        }
+
+        protected void modificar(object sender, EventArgs e)
+        {
+            ConsultaDataSource.UpdateParameters["des_servicio"].DefaultValue = DescServ.Text;
+            ConsultaDataSource.UpdateParameters["cod_tipo"].DefaultValue = DropTipo.SelectedValue;
+            ConsultaDataSource.UpdateParameters["cod_rubro"].DefaultValue = DropRubro.SelectedValue;
+            ConsultaDataSource.UpdateParameters["cod_servicio"].DefaultValue = codigo.Text;
+            int resultado = ConsultaDataSource.Update();
+            if (resultado > 0)
+            {
+                mensaje.Text = " Modificado!";
+            }
+            else { 
+                mensaje.Text = "Fallo Modificacion"; }
+            DescServ.Text = "";
+            DropRubro.SelectedIndex = 0;
+            DropTipo.SelectedIndex = 0;
+            codigo.Text = "";
+
         }
     }
 }

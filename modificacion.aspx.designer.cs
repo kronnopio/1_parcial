@@ -87,15 +87,6 @@ namespace _1_parcial
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Control DesTipo.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DesTipo;
-
-        /// <summary>
         /// Control DropTipo.
         /// </summary>
         /// <remarks>
@@ -114,15 +105,6 @@ namespace _1_parcial
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Control DesRubro.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DesRubro;
-
-        /// <summary>
         /// Control DropRubro.
         /// </summary>
         /// <remarks>
@@ -130,6 +112,15 @@ namespace _1_parcial
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropRubro;
+
+        /// <summary>
+        /// Control Modificar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Modificar;
 
         /// <summary>
         /// Control ConsultaDataSource.
