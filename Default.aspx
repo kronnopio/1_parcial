@@ -8,7 +8,7 @@
         <br /><br />
         <asp:Button ID="Button_alta" runat="server" Text="Alta" PostBackUrl="alta.aspx" />&nbsp;&nbsp;
         <asp:Button ID="Button_baja" runat="server" Text="Baja" PostBackUrl="baja.aspx"  />&nbsp;&nbsp;
-        <asp:Button ID="Button_modificaion" runat="server" Text="Modificacion" />
+        <asp:Button ID="Button_modificaion" runat="server" Text="Modificacion" PostBackUrl="modificacion.aspx" />
         <br /> <br /> 
         <asp:Button ID="Button_serv" runat="server" PostBackUrl="ver_servicios.aspx" Text="Ver Servicios" />&nbsp;&nbsp;
         <asp:Button ID="Button_tipo" runat="server" PostBackUrl="ver_tipos.aspx" Text="Ver Tipos" />&nbsp;&nbsp;
