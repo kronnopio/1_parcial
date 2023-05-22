@@ -104,7 +104,7 @@
   <ItemGroup>
     <Content Include="About.aspx" />
     <Content Include="alta.aspx" />
-    <Content Include="borrar.aspx" />
+    <Content Include="bajar.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -208,12 +208,12 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="borrar.aspx.cs">
-      <DependentUpon>borrar.aspx</DependentUpon>
+    <Compile Include="bajar.aspx.cs">
+      <DependentUpon>bajar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="borrar.aspx.designer.cs">
-      <DependentUpon>borrar.aspx</DependentUpon>
+    <Compile Include="bajar.aspx.designer.cs">
+      <DependentUpon>bajar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
